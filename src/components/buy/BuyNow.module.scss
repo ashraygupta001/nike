@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
+.container{
+    display: grid;
+    margin-top: 115%;    
+}
 .buynow{
     font-family: 'Contrail One', cursive;
     font-size: 30px;
     color: #f8f8f8;
     transform: rotate(-90deg);
+    margin-right: 50%;
 }
 .cart {
     transform: rotate(-90deg);
     height: 20px;
     width: 20px;
+    margin-top: -25%;
+    margin-left: 21%;
 }

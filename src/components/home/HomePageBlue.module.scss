@@ -1,39 +1,73 @@
+body{
+    overflow: hidden;
+}
 .page{
     background-color: #445491;
+    height: 100%;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: minmax(50px, auto);
+    justify-content: center;
+    align-content: center;
 }
 .logo{
-    margin-top: 2%;
-    margin-left: 4%;
+    justify-self: center;
+    align-self: center;
+    margin-top: 10%;
+    margin-right: 11%;
 }
 
 .aboutus{
-    margin-top: 2%;
-    margin-right: 4%;
+    justify-self: center;
+    align-self: center;
+    grid-column: 3/4;
+    margin-top: 10%;
+    margin-right: 15%;
 }
-
+.buynow{
+    margin-left: 22%;
+}
+.shoes{
+    justify-self: center;
+    align-self: center;
+    margin-top: 7%;
+}
 .shoe{
     position: relative;
-    margin-left: 32%;
-    margin-top: 4%;
     z-index: 2;
     width: 600px;
     height: 600px;
 }
 
 .shoelogo{
+    margin-left:-2% ;
     position: absolute;
-    margin-left: 29%;
-    margin-top: 2%;
     z-index: 1;
     width: 771.05px;
     height: 716.18px;
     transform: rotate(-10deg);
 }
-.buynow{
-    position: relative;
+.sidebuttons{
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    gap: 20px;
 }
 .product{
-    margin-top: 1%;
+    grid-column:1/2 ;
+    justify-self: center;
+    align-self: center;
+}
+
+.nikeairmax{
+    grid-column: 2/3;
+    justify-self: center;
+    align-self: center;
+}
+.social{
+    justify-self: center;
+    align-self: center;
+    margin-top: -10%;
+    padding-bottom: 38px;
 }
