@@ -1,9 +1,29 @@
 body{
     overflow: hidden;
 }
-.page{
+.pageBlue{
     background: rgb(56, 56, 175);
     background: linear-gradient(137deg, rgb(54, 54, 172) 29%, rgb(59, 144, 180) 100%);
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: minmax(50px, auto);
+    justify-content: center;
+    align-content: center;
+}
+.pageRed{
+    background: #c94949;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: minmax(50px, auto);
+    justify-content: center;
+    align-content: center;
+}
+.pageBlack{
+    background: #da9c4c;
     height: 100vh;
     width: 100%;
     display: grid;
