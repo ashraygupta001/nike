@@ -61,45 +61,10 @@ const HomePageBlue = () => {
                 }
             }
         }
-
-        const getLogo = (backState) => {
-            switch(backState){
-                case '1': {
-                    return blueLogo
-                }
-                case '2': {
-                    return redLogo
-                }
-                case '3': {
-                    return orangeLogo
-                }
-                default: {
-                    return blueLogo
-                }
-            }
-        }
-
-        const getShoe = (backState) => {
-            switch(backState){
-                case '1':{
-                    return blue
-                }
-                case '2': {
-                    return red
-                }
-                case '3': {
-                    return orange
-                }
-                default: {
-                    return blue
-                }
-            }
-        }
-
-        const blueNikeLogoVariants = {
+        const nikeLogoVariants = {
             hidden: {
                 opacity: 0,
-                x: "-100vw"
+                x: "-100vw",
             },
             visible: {
                 opacity: 1,
@@ -110,9 +75,15 @@ const HomePageBlue = () => {
                         stiffness: 70,
                         damping: 11
                     }
+            },
+            hover: {
+                scale: 1.1,
+            },
+            tap: {
+                scale: .9,
             }
         }
-        const blueAboutUsVariants = {
+        const aboutUsVariants = {
             hidden: {
                 opacity: 0,
                 x: "100vw"
@@ -126,33 +97,116 @@ const HomePageBlue = () => {
                         stiffness: 70,
                         damping: 11
                     } 
+            },
+            hover: {
+                scale: 1.1,
+            },
+            tap: {
+                scale: .9,
+            }
+        }
+        const buyNowVariants = {
+            hidden: {
+                opacity: 0
+            },
+            visible: {
+                opacity: 1,
+                    transition: {
+                        type: "tween",
+                        duration: 1,
+                        ease: "easeIn"
+                    }
             }
         }
         
-
+        const allProductVariants = {
+            hidden: {
+                opacity: 0
+            },
+            visible: {
+                opacity: 1,
+                    transition: {
+                        type: "tween",
+                        duration: 1,
+                        ease: "easeIn"
+                    }
+            },
+            hover: {
+                scale: 1.1,
+            },
+            tap: {
+                scale: .9
+            }
+        }
+        const nikeMaxVariants = {
+            hidden: {
+                opacity: 0
+            },
+            visible: {
+                opacity: 1,
+                    transition: {
+                        type: "tween",
+                        duration: 1,
+                        ease: "easeIn"
+                    }
+            },
+            hover: {
+                scale: 1.1,
+            },
+            tap: {
+                scale: .9
+            }
+        }
     return(
         <Fragment>
             <div className={getClass(backState)}>
                     <motion.div 
                     className={blueStyle.logo}  
-                    variants = {blueNikeLogoVariants}
+                    variants = {nikeLogoVariants}
                     initial = "hidden"
                     animate = "visible"
+                    whileHover = "hover"
+                    whileTap = "tap"
                     >
                     <NikeLogo />
                     </motion.div>
                     <motion.div 
                     className={blueStyle.aboutus}
-                    variants = {blueAboutUsVariants}
+                    variants = {aboutUsVariants}
                     initial = "hidden"
                     animate = "visible"
+                    whileHover = "hover"
+                    whileTap = "tap"
                     >
                     <AboutUs />
                     </motion.div>
-                    <div className={blueStyle.buynow} ><BuyNow /></div>
+                    <motion.div
+                    className={blueStyle.buynow}
+                    variants = {buyNowVariants}  
+                    initial = "hidden"
+                    animate = "visible"
+                    >
+                     <BuyNow />
+                     </motion.div>
                     <div className={blueStyle.shoes}>
-                        <img className={blueStyle.shoelogo} src={getLogo(backState)} alt='blue Shoes' />
-                        <img className={blueStyle.shoe} src={getShoe(backState)} alt='blue Shoes' />
+                        {blueBack && 
+                            <div>
+                                <img className={blueStyle.shoelogo} src={blueLogo} alt='blue Shoes' />
+                                <img className={blueStyle.shoe} src={blue} alt='blue Shoes' />
+                            </div>
+                        }
+                        {redBack && 
+                        <div>
+                            <img className={blueStyle.shoelogo} src={redLogo} alt='blue Shoes' />
+                            <img className={blueStyle.shoe} src={red} alt='blue Shoes' />
+                        </div>
+                        }
+                        {blackBack && 
+                        <div>
+                            <img className={blueStyle.shoelogo} src={orangeLogo} alt='blue Shoes' />
+                            <img className={blueStyle.shoe} src={orange} alt='blue Shoes' />
+                        </div>
+                        }
                     </div>
                     <div className={blueStyle.sidebuttons}>
                         <div>
@@ -171,9 +225,31 @@ const HomePageBlue = () => {
                             </button>
                         </div>
                     </div>
-                    <div className={blueStyle.product}  ><AllProducts /></div>
-                    <div className={blueStyle.nikeairmax}><NikeAirMax /> </div>
-                    <div className={blueStyle.social}><Social />  </div>
+                    <motion.div className={blueStyle.product}
+                    variants = {allProductVariants}
+                    initial = "hidden"
+                    animate = "visible"
+                    whileHover = "hover"
+                    whileTap = "tap"
+                    >
+                    <AllProducts />
+                    </motion.div>
+                    <motion.div className={blueStyle.nikeairmax}
+                    variants = {nikeMaxVariants}
+                    initial = "hidden"
+                    animate = "visible"
+                    whileHover = "hover"
+                    whileTap = "tap"
+                    >
+                    <NikeAirMax /> 
+                    </motion.div>
+                    <motion.div className={blueStyle.social}
+                    variants = {nikeMaxVariants}
+                    initial = "hidden"
+                    animate = "visible"
+                    >
+                    <Social />  
+                    </motion.div>
             </div>
         </Fragment>
     )

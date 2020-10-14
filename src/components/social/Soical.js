@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-
+import {motion} from 'framer-motion';
 import instagram from './../../assests/instagram.png';
 import linkdin from './../../assests/linkdin.png';
 import twitter from './../../assests/twitter.png';
@@ -10,9 +10,9 @@ const Social = () => {
     return(
         <Fragment>
             <div className={styles.social}>
-                <img className = {styles.instagram} src={instagram} alt = "istagram" />
-                <img className={styles.linkdin} src ={linkdin} alt="linkdin" />
-                <img className={styles.twitter} src = {twitter} alt = "twitter" />
+                <motion.img className = {styles.instagram} src={instagram} alt = "istagram" />
+                <motion.img className={styles.linkdin} src ={linkdin} alt="linkdin" />
+                <motion.img className={styles.twitter} src = {twitter} alt = "twitter" />
             </div>
         </Fragment>
     )
